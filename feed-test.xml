@@ -1,0 +1,18 @@
+{
+  "Weather": [
+    {
+      "title": "Morning Weather Update",
+      "link": "https://example.com/weather/today",
+      "description": "Sunny, highs of 25°C",
+      "pubDate": "2025-09-28T06:00:00Z"
+    }
+  ],
+  "News of Interest": [
+    {
+      "title": "Pharmacy Data Reform",
+      "link": "https://example.com/news/pharmacy",
+      "description": "Major update in medication interoperability.",
+      "pubDate": "2025-09-28T05:00:00Z"
+    }
+  ]
+}
