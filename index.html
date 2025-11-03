@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Markdown Renderer</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- <script src="index.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+
     <p>Hello world! This is HTML5 Boilerplate.</p>
-    
-    <div id="markdown-content">
-        # Hello, Markdown!
-        This is some **bold** text and *italic* text.
-        - List item 1
-        - List item 2
-    </div>
+
+    <!-- Markdown source kept as plain text -->
+    <script type="text/markdown" id="markdown-content">
+# Hello, Markdown!
+
+This is some **bold** text and *italic* text.
+
+- List item 1
+- List item 2
+
+[Visit GitHub](https://github.com)
+    </script>
+
+    <!-- Where rendered HTML will appear -->
     <div id="rendered-html"></div>
 
     <script>
-        const markdownContent = document.getElementById('markdown-content').textContent;
-        const renderedHtml = marked.parse(markdownContent);
-        document.getElementById('rendered-html').innerHTML = renderedHtml;
+      // Get Markdown text from the <script type="text/markdown"> block
+      const markdownContent = document.getElementById('markdown-content').textContent;
+      // Convert Markdown to HTML
+      const renderedHtml = marked.parse(markdownContent);
+      // Inject rendered HTML into the target div
+      document.getElementById('rendered-html').innerHTML = renderedHtml;
     </script>
-    
   </body>
 </html>
