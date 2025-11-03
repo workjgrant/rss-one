@@ -4,15 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- <script src="index.js"></script> -->
+    
     <p>Hello world! This is HTML5 Boilerplate.</p>
-    <p></p>
-    **Bolded?**
-    <p></p>
-    *Italics?*
+    
+    <div id="markdown-content">
+        # Hello, Markdown!
+        This is some **bold** text and *italic* text.
+        - List item 1
+        - List item 2
+    </div>
+    <div id="rendered-html"></div>
+
+    <script>
+        const markdownContent = document.getElementById('markdown-content').textContent;
+        const renderedHtml = marked.parse(markdownContent);
+        document.getElementById('rendered-html').innerHTML = renderedHtml;
+    </script>
+    
   </body>
 </html>
