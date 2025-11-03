@@ -1,1 +1,44 @@
-Monday
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Markdown Renderer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+
+    <!-- Markdown source kept as plain text -->
+    <script type="text/markdown" id="markdown-content">MondayInbound 
+Route 200
+- 06:00
+- 06:15
+- 06:27
+- 06:37
+- 06:47 
+Route M2 
+- Every 5 minutes 
+
+Outbound 
+Route M2
+- Every 5 minutes 
+
+Route 200 
+- ?11 minutes past the hour every 10mins 
+- 16:11, 16:21, 16:31, 16:41, 16:51</script>
+
+    <!-- Where rendered HTML will appear -->
+    <div id="rendered-html"></div>
+
+    <script>
+      // Get Markdown text from the <script type="text/markdown"> block
+      const markdownContent = document.getElementById('markdown-content').textContent;
+      // Convert Markdown to HTML
+      const renderedHtml = marked.parse(markdownContent);
+      // Inject rendered HTML into the target div
+      document.getElementById('rendered-html').innerHTML = renderedHtml;
+    </script>
+  </body>
+</html>
